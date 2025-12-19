@@ -1,0 +1,45 @@
+/* Contenedor general */
+.containerTexto {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 163, 115, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Texto */
+.texto {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+
+/* Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .containerTexto {
+    padding: 1.8rem;
+  }
+
+  .texto {
+    font-size: 1.05rem;
+  }
+}

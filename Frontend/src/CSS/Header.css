@@ -1,0 +1,213 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 136, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 136, 0, 0.15);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ===== LINKS ===== */
+.navbar-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #2c2c2c;
+  padding: 3px 0;
+  border-bottom: 2px solid transparent;
+  transition: 0.25s;
+}
+
+.navbar-links a:hover {
+  color: #ff6a00;
+  border-bottom: 2px solid #ff6a00;
+}
+
+/* ===== CART BUTTON ===== */
+.cart-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  padding: 5px;
+  transition: 0.2s;
+}
+
+.cart-btn:hover {
+  transform: scale(1.1);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff6a00;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* ===== LOGIN / LOGOUT BUTTONS ===== */
+.login-btn,
+.logout-btn {
+  background: linear-gradient(90deg, #ff7a00, #ff9500);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* ===== MODAL OVERLAY ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(3px);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  background: white;
+  width: 340px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal h3 {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #ff6a00;
+  font-weight: 700;
+}
+
+.modal input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: 0.2s;
+}
+
+.modal input:focus {
+  border-color: #ff7a00;
+  outline: none;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-btn {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ff6a00;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.25);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.cancel {
+  background: #e5e5e5;
+  color: #333;
+}
+
+.btn.submit {
+  background: #ff7a00;
+  color: #fff;
+}
+
+.btn.submit:hover {
+  opacity: 0.85;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== LOGIN ERROR MESSAGE ===== */
+.login-error {
+  color: #b00020; /* accessible red */
+  background: rgba(176,0,32,0.04);
+  border: 1px solid rgba(176,0,32,0.12);
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}

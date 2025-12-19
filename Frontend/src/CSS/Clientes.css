@@ -1,0 +1,158 @@
+/* ===== CONTENEDOR GENERAL ===== */
+.clientes-page {
+  padding: 24px;
+  background: #f7f7f9;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.clientes-page h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ff7a18;
+}
+
+/* ===== FORMULARIO ===== */
+.clientes-page form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.clientes-page input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.clientes-page input:focus {
+  border-color: #ff7a18;
+  box-shadow: 0 0 0 2px rgba(255, 122, 24, 0.15);
+}
+
+/* Grid del formulario */
+.clientes-page form > div > div:first-child {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+/* ===== BOTONES ===== */
+.clientes-page button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+}
+
+.clientes-page button[type="submit"] {
+  background: linear-gradient(135deg, #ff7a18, #ff9f43);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(255, 122, 24, 0.35);
+}
+
+.clientes-page button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(255, 122, 24, 0.45);
+}
+
+.clientes-page button[type="button"] {
+  background: #e0e0e0;
+  color: #333;
+  margin-left: 10px;
+}
+
+.clientes-page button[type="button"]:hover {
+  background: #d2d2d2;
+}
+
+/* ===== ERRORES ===== */
+.clientes-page .error {
+  color: crimson;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* ===== TABLA ===== */
+.clientes-page table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.clientes-page thead {
+  background: #ff7a18;
+}
+
+.clientes-page th {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.clientes-page td {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.clientes-page tbody tr:hover {
+  background: #fff5ec;
+}
+
+/* ===== BOTONES DE ACCIONES ===== */
+.clientes-page td button {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.clientes-page td button:first-child {
+  background: #4caf50;
+  color: #fff;
+}
+
+.clientes-page td button:first-child:hover {
+  background: #43a047;
+}
+
+.clientes-page td button:last-child {
+  background: #e53935;
+  color: #fff;
+}
+
+.clientes-page td button:last-child:hover {
+  background: #d32f2f;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .clientes-page h2 {
+    font-size: 22px;
+  }
+
+  .clientes-page table {
+    font-size: 12px;
+  }
+
+  .clientes-page th,
+  .clientes-page td {
+    padding: 8px;
+  }
+}
