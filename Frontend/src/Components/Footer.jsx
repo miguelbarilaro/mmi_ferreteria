@@ -21,7 +21,7 @@ const Footer = () => {
           <div>
             <h4 className="footer-subtitle orange">Contacto</h4>
 
-            <p className="footer-item">📞 +5a 9 381 4264736</p>
+            <p className="footer-item">📞 +5 9 381 4264736</p>
             <p className="footer-item">📧 ferreteriamontenegro@outlook.com.ar</p>
             <p className="footer-item">📍 Av. Industrial 123, San Miguel de Tucumán</p>
           </div>
