@@ -1,65 +1,148 @@
-/* ===== TÍTULO EN TONOS NARANJAS ===== */
+/* ========================
+   VARIABLES
+======================== */
+:root {
+  --white: #ffffff;
+  --orange: #ff7a18;
+  --orange-soft: #ff9f1c;
+  --dark: #2b2b2b;
+  --gray: #5f5f5f;
+  --border: #ededed;
+  --blur-orange: rgba(255, 122, 24, 0.18);
+}
+
+/* ========================
+   CONTENEDOR GENERAL
+======================== */
+.servicios-container {
+  background: transparent;
+  max-width: 1280px;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+/* ========================
+   TITULO
+======================== */
+.titulo-container {
+  text-align: center;
+}
+
 .titulo-naranja {
-  font-size: 3rem;
-  text-align: center;
-  color: #ff7a00; /* naranja sólido */
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark);
 }
 
-
-/* Ajustes responsivos del título */
-@media (min-width: 640px) {
-  .titulo-naranja {
-    font-size: 4rem;
-  }
+.titulo-naranja-gradiente {
+  background: linear-gradient(90deg, var(--orange), var(--orange-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
 }
 
-/* ===== BOTONES UNO AL LADO DEL OTRO ===== */
+.titulo-naranja-gradiente::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-soft));
+  display: block;
+  margin: 0.8rem auto 0;
+  border-radius: 4px;
+}
+
+/* ========================
+   FILA DE TARJETAS
+======================== */
 .servicios-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;        /* separación entre botones */
-  flex-wrap: nowrap; /* no se bajan a otra línea */
-  overflow-x: auto;  /* si son muchos, scrollean horizontalmente */
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
-/* Slot base */
+/* ========================
+   TARJETAS
+======================== */
 .slot {
-  padding: 0.5rem;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: Public-Sans, sans-serif;
-  color: #00275c;
-  text-align: center;
-}
-
-/* Tarjetas (botones visuales) */
-.user-card {
-  background-color: white;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
-  padding: 1rem 1.5rem;
-  height: 120px;
-  min-width: 200px;
-  transition: transform 0.3s, background-color 0.3s;
   display: flex;
   justify-content: center;
+}
+
+.user-card {
+  width: 100%;
+  min-height: 140px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 65%,
+    rgba(255, 122, 24, 0.04)
+  );
+  border-radius: 20px;
+  padding: 2rem 1.8rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: default;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
+/* DIFUMINADO */
+.user-card::before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(
+    circle,
+    var(--blur-orange),
+    transparent 70%
+  );
+  top: -60px;
+  right: -60px;
+}
+
+/* HOVER */
 .user-card:hover {
-  transform: scale(1.08);
-  background-color: #ffe5c2; /* naranja suave */
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.08),
+    0 0 35px var(--blur-orange);
 }
 
-/* Texto de tarjeta */
+/* TEXTO */
 .user-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  transition: transform 0.3s;
+  color: var(--dark);
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
 }
 
-.user-title:hover {
-  transform: scale(1.1);
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+  .servicios-container {
+    padding: 3rem 1rem;
+  }
+
+  .titulo-naranja {
+    font-size: 1.4rem;
+  }
+
+  .user-card {
+    min-height: 120px;
+    padding: 1.5rem;
+  }
+
+  .user-title {
+    font-size: 0.95rem;
+  }
 }

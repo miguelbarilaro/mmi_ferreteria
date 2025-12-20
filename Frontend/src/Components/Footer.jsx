@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2024 MMI Industriales. Todos los derechos reservados.</p>
+          <p>© 2026 MMI Industriales. Todos los derechos reservados.</p>
         </div>
 
       </div>

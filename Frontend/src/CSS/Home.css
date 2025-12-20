@@ -1,0 +1,15 @@
+.home-split {
+  width: 100%;
+  position: relative;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url("../assets/0000.jpeg"); /* IMAGEN EN /public */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

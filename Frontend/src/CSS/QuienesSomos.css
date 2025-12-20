@@ -1,45 +1,192 @@
-/* Contenedor general */
+/* =====================================================
+   VARIABLES GLOBALES
+===================================================== */
+:root {
+  --white: #ffffff;
+  --orange: #ff7a18;
+  --orange-soft: #ff9f1c;
+  --dark: #2b2b2b;
+  --gray: #5f5f5f;
+  --border: #ededed;
+}
+
+/* =====================================================
+   QUIÉNES SOMOS
+===================================================== */
+.quienes-section {
+  background: transparent;
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
 .containerTexto {
-  max-width: 1000px;
-  margin: 4rem auto;
-  padding: 2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
-  border: 1px solid rgba(212, 163, 115, 0.4);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.6s ease-in-out;
+  position: relative;
+  max-width: 980px;
+  padding: 3rem 3.5rem;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fff7f0 100%
+  );
+  border-radius: 26px;
+
+  /* BORDE GRADIENTE */
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow:
+    0 20px 45px rgba(255, 122, 24, 0.18),
+    0 0 0 2px rgba(255, 122, 24, 0.15);
+
+  transition: all 0.4s ease;
 }
 
-/* Texto */
+.containerTexto::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 6px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--orange),
+    var(--orange-soft)
+  );
+}
+
+
+.containerTexto:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 30px 70px rgba(255, 122, 24, 0.25),
+    0 0 0 3px rgba(255, 122, 24, 0.25);
+}
+
+
 .texto {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: #2d2d2d;
-  opacity: 0.95;
-  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: #4a4a4a;
 }
 
 
-/* Animación suave */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.resaltado {
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--orange), var(--orange-soft));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Responsivo */
+/* =====================================================
+   CATÁLOGO
+===================================================== */
+.servicios-container {
+  background: transparent;
+  max-width: 1280px;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+.titulo-container {
+  text-align: center;
+}
+
+.titulo-naranja {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.titulo-naranja-gradiente {
+  background: linear-gradient(90deg, var(--orange), var(--orange-soft));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.titulo-naranja-gradiente::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-soft));
+  display: block;
+  margin: 0.7rem auto 0;
+  border-radius: 4px;
+}
+
+/* GRID */
+.servicios-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.slot {
+  display: flex;
+  justify-content: center;
+}
+
+/* TARJETAS */
+.user-card {
+  width: 100%;
+  min-height: 130px;
+  background: var(--white);
+  border-radius: 18px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 45px rgba(255, 122, 24, 0.18);
+}
+
+.user-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.4;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 @media (max-width: 768px) {
   .containerTexto {
-    padding: 1.8rem;
+    padding: 2rem;
+    border-radius: 18px;
   }
 
   .texto {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .servicios-container {
+    padding: 3rem 1rem;
+  }
+
+  .titulo-naranja {
+    font-size: 1.4rem;
+  }
+
+  .user-card {
+    min-height: 115px;
+    padding: 1.5rem;
+  }
+
+  .user-title {
+    font-size: 0.95rem;
   }
 }
