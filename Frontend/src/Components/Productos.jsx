@@ -32,7 +32,17 @@ export default function Productos() {
   };
 
   useEffect(() => {
-    cargarProductos();
+    let mounted = true;
+    (async () => {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        if (mounted) setProductos(data);
+      } catch (err) {
+        console.error('Error cargando productos:', err);
+      }
+    })();
+    return () => { mounted = false; };
   }, []);
 
   /* ======================
